@@ -8,25 +8,37 @@ namespace Genomgång_SalerySystem
 {
     internal class HeadOffice
     {
-        private Outlet[] outlets;
+        private Outlet[] Outlets;
         private int CurrentOutletCount;
 
         public HeadOffice(int maxOutlets)
         {
-            outlets = new Outlet[maxOutlets];
+            Outlets = new Outlet[maxOutlets];
         }
 
         public void AddOutlet(Outlet outlet)
         {
-            if (CurrentOutletCount < outlets.Length)
+            if (CurrentOutletCount < Outlets.Length)
             {
-                outlets[CurrentOutletCount] = outlet;
+                Outlets[CurrentOutletCount] = outlet;
                 CurrentOutletCount++;
             }
             else
             {
                 Console.WriteLine("Head Office has reached its maximum amounts");
             }
+        }
+
+        public double GetTotalCompanySalary()
+        {
+            double total = 0;
+            for (int i = 0; i < CurrentOutletCount; i++)
+            {
+                total += Outlets[i].GetTotalOutletSalary();
+                
+            }
+
+            return total;
         }
     }
 }

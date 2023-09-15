@@ -31,6 +31,9 @@
             HeadOffice HeadQuarterSweden = new HeadOffice(10);
 
             HeadQuarterSweden.AddOutlet(frolunda);
+
+            Console.WriteLine(HeadQuarterSweden.GetTotalCompanySalary());
+
         }   
 
 
